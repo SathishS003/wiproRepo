@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level - %msg%n"/>
+        </Console>
+        <File name="File1" fileName="D:\TestResults\logs.log" append="true">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+       <Logger name="user1" level="info" additivity="true">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <!--<Root level="info">
+            <AppenderRef ref="File1"/>
+            <AppenderRef  ref= "Console"/>
+        </Root>  -->
+        
+        <Root level="ERROR">
+            <AppenderRef ref="File1"/>
+        </Root>
+        
+        
+    </Loggers>
+</Configuration>
